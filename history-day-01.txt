@@ -1,0 +1,53 @@
+    1  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+    2  oc get nodes
+    3  ssh root@utility 
+    4  oc whoami 
+    5  oc whoami -t 
+    6  oc whoami
+    7  oc get nodes 
+    8  oc get nodes  --loglevel 7
+    9  cat /home/student/.kube/config
+   10  oc whoami
+   11  oc whoami -t
+   12  ls -l /home/student/.kube/config
+   13  oc logout 
+   14  oc whoami -t
+   15  oc whoami
+   16  oc get nodes
+   17  export KUBECONFIG=/home/student/kubeconfig
+   18  oc get nodes
+   19  oc whoami
+   20  oc whoami -t
+   21  oc logout 
+   22  env | grep KUBE
+   23  unset KUBECONFIG 
+   24  env | grep KUBE
+   25  oc whoami
+   26  oc whoami --kubeconfig kubeconfig
+   27  oc get nodes --kubeconfig kubeconfig
+   28  oc whoami  --kubeconfig kubeconfig
+   29  oc whoami  -t --kubeconfig kubeconfig
+   30  oc login https://api.ocp4.example.com:6443 
+   31  oc logout 
+   32  oc login https://api.ocp4.example.com:6443 
+   33  oc whoamin 
+   34  oc login -u admin https://api.ocp4.example.com:6443 
+   35  oc whoami --show-console 
+   36  oc get route -n openshift-console 
+   37  #https://console-openshift-console.apps.ocp4.example.com
+   38  nslookup quay.io
+   39  oc get nodes 
+   40  oc debug node/master01
+   41  oc login -u admin https://api.ocp4.example.com:6443 
+   42  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+   43  nslookup api.ocp4.example.com
+   44  ssh api.ocp4.example.com -l root
+   45  oc whoami --show-console 
+   46  oc get route -n openshift-console 
+   47  oc get pods -n openshift-console 
+   48  oc get pods -n openshift-console -o wide 
+   49  oc get svc -n openshift-console -o wide 
+   50  nslookup console-openshift-console.apps.ocp4.example.com
+   51  ssh console-openshift-console.apps.ocp4.example.com -l root
+   52  ll
+   53  history > history-day-01.txt 

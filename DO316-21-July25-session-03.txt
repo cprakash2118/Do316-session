@@ -1,0 +1,80 @@
+#Quick Recap:-
+Red Hat OpenShift Virtulization:-
+- Red Hat OpenShift (Web Console/oc as CLI) - Vcenter/Virtulization-Manager
+- kubelet (Systemd Service - running on all the nodes master/worker; worker -> infra/storage/custom].
+  FYI- VDSM (vmware tool) as agent w.r.t Virtulization part (KVM level).
+- kubeVirt Container stack {[libvirt + QEMU/KVM] + VMs }  
+- RHEL core OS (kubeVirt stack running on coreOS).
+
+VM1 -> kubeVirt stack 
+VM2 -> kubeVirt stack 
+
+Note: libvirt & QEMU/KVM are containerised.
+
+# Kubernetes/OpenShift flow.
+Kubernetes Vs OpenShift:-
+- Red Hat OpenShift take certified kubernetes as base image.
+- k8s deployed on OS - w.r.t RHOCP k8s deployed on RHEL coreOS.
+  RHEL coreOS kenel - updated on as same as RHEL.
+  Container optomizsed OS.
+  Crio as Container Run Time (systemd service) on all worker/master nodes.
+  crictl (Container Engine)
+  
+  End User application
+  RHOPP 
+  RHOCP 
+  RHOKE 
+  RHEL coreOS + Crio + k8s [kubelet;kube-apiserver;kube-controller-mgr;kube-scheduler;etcd]
+  
+  
+  RHOCPv4.11 - k8s 1.24 
+  ..
+  ..
+  RHOCPv416  - k8s 1.29 
+  RHOCPv417  - k8s 1.30 
+  RHOCPv418  - k8s 1.31
+  RHOCPv419  - k8s 1.32
+  
+  RHOCP - (k8s version always like [n-1]).
+  https://docs.redhat.com/en/documentation/openshift_container_platform/4.19
+  https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+  https://www.cncf.io/projects/kubevirt/
+  
+
+## Kubernetes/OpenShift resources.
+Deploy application via pod
+Deploy application via other resources like 
+ - replicaSet 
+ - deployment 
+ - daemonSet 
+ - statefulSet 
+ 
+ 
+ CR - Custom Resource.
+ CRD - Custom Resource Defination 
+ 
+ apiVersion: v1 
+ kind: Pod 
+ metadata:
+   name: name 
+ spec:
+  
+
+ apiVersion: apps/v1 
+ kind: ReplicaSet
+ metadata:
+   name: name 
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: myapp 
+   template:
+   
+  
+  
+  
+  
+  
+  
+  
